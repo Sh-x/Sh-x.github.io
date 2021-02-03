@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Core Dump</title>
+  
+  
+  <link href="http://shixuan.me/atom.xml" rel="self"/>
+  
+  <link href="http://shixuan.me/"/>
+  <updated>2021-01-01T05:33:22.189Z</updated>
+  <id>http://shixuan.me/</id>
+  
+  <author>
+    <name>S.X.</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2021 新年快乐</title>
+    <link href="http://shixuan.me/2021/01/01/happy-new-year-2021/"/>
+    <id>http://shixuan.me/2021/01/01/happy-new-year-2021/</id>
+    <published>2021-01-01T05:24:25.000Z</published>
+    <updated>2021-01-01T05:33:22.189Z</updated>
+    
+    
+    <summary type="html">&lt;h3 style=&quot;text-align:center;&quot;&gt;&lt;strong&gt;新的一年再次从gakki的问候开始&lt;/strong&gt;&lt;/h3&gt;</summary>
+    
+    
+    
+    <category term="Nonsense" scheme="http://shixuan.me/categories/Nonsense/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>scipy.optimize.minimize如何传入多个向量(矩阵)</title>
+    <link href="http://shixuan.me/2020/11/19/scipy-minimize-with-vectors/"/>
+    <id>http://shixuan.me/2020/11/19/scipy-minimize-with-vectors/</id>
+    <published>2020-11-19T10:32:25.000Z</published>
+    <updated>2021-01-02T14:56:08.472Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;记一次困扰了一周的问题&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="optimization" scheme="http://shixuan.me/categories/optimization/"/>
+    
+    
+    <category term="scipy" scheme="http://shixuan.me/tags/scipy/"/>
+    
+    <category term="optimization" scheme="http://shixuan.me/tags/optimization/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>索引与B+树</title>
+    <link href="http://shixuan.me/2020/09/12/index-and-b+tree/"/>
+    <id>http://shixuan.me/2020/09/12/index-and-b+tree/</id>
+    <published>2020-09-12T12:38:59.000Z</published>
+    <updated>2020-09-19T12:49:17.485Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;为什么InnoDB使用B+树作为索引的数据结构？&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="数据结构" scheme="http://shixuan.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+    <category term="数据结构" scheme="http://shixuan.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    <category term="MySQL" scheme="http://shixuan.me/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面向切面编程(AOP)</title>
+    <link href="http://shixuan.me/2020/08/10/aop/"/>
+    <id>http://shixuan.me/2020/08/10/aop/</id>
+    <published>2020-08-10T09:32:26.000Z</published>
+    <updated>2020-08-17T16:11:31.349Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;AOP，Aspect Oriented Programming，也叫面向切片编程，是一种编程范式。网上对于AOP的解释都比较繁琐，简单来讲，AOP能通过代理模式对已有的模块进行增强，动态地将代码切入到某个类的指定位置上的思想就是面向切面的编程。</summary>
+    
+    
+    
+    <category term="前后端" scheme="http://shixuan.me/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Java" scheme="http://shixuan.me/tags/Java/"/>
+    
+    <category term="Spring" scheme="http://shixuan.me/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>控制反转和依赖注入</title>
+    <link href="http://shixuan.me/2020/07/20/ioc-di/"/>
+    <id>http://shixuan.me/2020/07/20/ioc-di/</id>
+    <published>2020-07-20T14:30:42.000Z</published>
+    <updated>2020-08-14T08:59:38.515Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;学Spring的时候，接触到两个比较重要的概念，一个是IoC（Inversion of Control），控制反转；一个是DI（Dependency Injection），依赖注入。</summary>
+    
+    
+    
+    <category term="前后端" scheme="http://shixuan.me/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Java" scheme="http://shixuan.me/tags/Java/"/>
+    
+    <category term="Spring" scheme="http://shixuan.me/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java反射</title>
+    <link href="http://shixuan.me/2020/07/12/java-reflection/"/>
+    <id>http://shixuan.me/2020/07/12/java-reflection/</id>
+    <published>2020-07-12T15:03:14.000Z</published>
+    <updated>2020-09-05T01:45:01.943Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近在学springboot，想看看这个框架的一些具体细节，发现网上的文章里经常提到反射反射反射，这又得过来学学反射机制……&lt;/p&gt;
+&lt;p&gt;总得来讲，Java的反射机制可以让我们在程序运行时动态构建一个对象，获取对象的属性、构造器以及方法。反射会破坏Java代码的封装性，所以一般只用于框架中。反射用得好，能把JVM掀个底朝天(bushi</summary>
+    
+    
+    
+    <category term="前后端" scheme="http://shixuan.me/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Java" scheme="http://shixuan.me/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven从入门到入土</title>
+    <link href="http://shixuan.me/2020/07/10/maven/"/>
+    <id>http://shixuan.me/2020/07/10/maven/</id>
+    <published>2020-07-09T16:12:22.000Z</published>
+    <updated>2020-12-26T09:44:10.305Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Maven学习记录。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="前后端" scheme="http://shixuan.me/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Java" scheme="http://shixuan.me/tags/Java/"/>
+    
+    <category term="Maven" scheme="http://shixuan.me/tags/Maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS原型与继承</title>
+    <link href="http://shixuan.me/2020/04/10/js-prototype-and-inheritance/"/>
+    <id>http://shixuan.me/2020/04/10/js-prototype-and-inheritance/</id>
+    <published>2020-04-10T15:01:22.000Z</published>
+    <updated>2020-09-12T14:25:57.419Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;ECMAScript 2015 中引入的 JavaScript 类实质上是 JavaScript 现有的基于原型的继承的语法糖。类语法不会为JavaScript引入新的面向对象的继承模型。&lt;/p&gt;
+&lt;p style=&quot;text-align:right;&quot;&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes&quot;&gt;MDN Web doc&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在设计之初，JS本身只是单纯的作为一个用于网页设计的脚本语言，所以其并没有设计得很复杂。而对于继承，JS采用了原型的形式。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="前后端" scheme="http://shixuan.me/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Javascript" scheme="http://shixuan.me/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>并查集</title>
+    <link href="http://shixuan.me/2020/02/29/disjoint-sets/"/>
+    <id>http://shixuan.me/2020/02/29/disjoint-sets/</id>
+    <published>2020-02-29T12:46:23.000Z</published>
+    <updated>2021-01-19T05:38:17.693Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;今天给朋友找资料时，无意中翻出了当年写的Kruskal算法的实现代码。&lt;del&gt;说实话现在再看当年自己写的代码，已经看不懂了。&lt;/del&gt;其中在判断选边之后会不会形成闭环回路时，用到了并查集，因为当时是现用现学的，所以还是有些生疏，今天又拿出来翻了翻。说真的，这个结构以及算法是真的简洁实用。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="数据结构" scheme="http://shixuan.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+    <category term="数据结构" scheme="http://shixuan.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    <category term="C" scheme="http://shixuan.me/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker部署Flask</title>
+    <link href="http://shixuan.me/2020/01/18/docker-deploys-flask/"/>
+    <id>http://shixuan.me/2020/01/18/docker-deploys-flask/</id>
+    <published>2020-01-18T12:35:41.000Z</published>
+    <updated>2020-08-14T08:59:01.204Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近闲得想把flask项目部署到服务器上，参考了&lt;a href=&quot;https://dormousehole.readthedocs.io/en/latest/deploying/index.html&quot;&gt;官方文档&lt;/a&gt;后，最初选择的是Apache的httpd+mod_wsgi。但apache的配置实在是过于繁琐，各种错误频频发生。尽管通过参考一些网上的资料排除了许多故障，但最后的404问题实在不知道怎么解决。之后转战uWSGI+nginx，但最后的nginx error实在是让我束手无策…… httpd和nginx的错误日志里也没有显示什么，项目在开发环境中也没有问题……所以干脆放弃了，改用了Docker。</summary>
+    
+    
+    
+    <category term="前后端" scheme="http://shixuan.me/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Flask" scheme="http://shixuan.me/tags/Flask/"/>
+    
+    <category term="Docker" scheme="http://shixuan.me/tags/Docker/"/>
+    
+    <category term="Linux" scheme="http://shixuan.me/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新年快乐</title>
+    <link href="http://shixuan.me/2020/01/01/happy-new-year/"/>
+    <id>http://shixuan.me/2020/01/01/happy-new-year/</id>
+    <published>2020-01-01T03:39:04.000Z</published>
+    <updated>2020-09-12T12:13:53.800Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="Nonsense" scheme="http://shixuan.me/categories/Nonsense/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>添加Valine评论功能</title>
+    <link href="http://shixuan.me/2019/12/12/add-valine-comments/"/>
+    <id>http://shixuan.me/2019/12/12/add-valine-comments/</id>
+    <published>2019-12-12T13:45:25.000Z</published>
+    <updated>2020-09-12T12:14:04.185Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;想着给自己博客加个评论功能，奈何主题作者没有给出设置选项，只能自己摸索着配置。&lt;/p&gt;
+&lt;p&gt;此评论功能采用的是&lt;a href=&quot;https://valine.js.org/&quot;&gt;Valine&lt;/a&gt;。&lt;del&gt;虽然我更喜欢来必力&lt;/del&gt;</summary>
+    
+    
+    
+    <category term="Nonsense" scheme="http://shixuan.me/categories/Nonsense/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于Flask浏览器缓存问题</title>
+    <link href="http://shixuan.me/2019/12/11/cache-in-flask/"/>
+    <id>http://shixuan.me/2019/12/11/cache-in-flask/</id>
+    <published>2019-12-11T13:44:06.000Z</published>
+    <updated>2020-08-14T08:58:48.255Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="前后端" scheme="http://shixuan.me/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Flask" scheme="http://shixuan.me/tags/Flask/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>迁移至Hexo</title>
+    <link href="http://shixuan.me/2019/10/10/to-hexo/"/>
+    <id>http://shixuan.me/2019/10/10/to-hexo/</id>
+    <published>2019-10-10T11:30:10.000Z</published>
+    <updated>2020-09-12T12:03:06.941Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;实在是懒得手敲前端了……&lt;del&gt;(其实是失去了全栈的梦想)&lt;/del&gt;于是改用Hexo了。</summary>
+    
+    
+    
+    
+  </entry>
+  
+</feed>

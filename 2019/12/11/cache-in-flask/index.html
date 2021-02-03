@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>关于Flask浏览器缓存问题 - Core Dump</title><meta description="最近写大作业需要用到Flask框架，但使用时发现一个致命问题。 起因是我在修改css文件后，重新运行项目，发现前端并没有更改。 原因是在编写前端时，通常会把图片、css、js等文件放在static文件夹下。但这同时也导致了一个问题：在浏览器加载网页时，会留有一份缓存。当重新运行项目，浏览器并没有向后台请求新的样式文件，而是直接加载的缓存。 正常人最初的想法肯定都是把浏览器缓存关掉。但不知为何，我的"><meta property="og:type" content="blog"><meta property="og:title" content="关于Flask浏览器缓存问题"><meta property="og:url" content="http://shixuan.me/2019/12/11/cache-in-flask/"><meta property="og:site_name" content="Core Dump"><meta property="og:description" content="最近写大作业需要用到Flask框架，但使用时发现一个致命问题。 起因是我在修改css文件后，重新运行项目，发现前端并没有更改。 原因是在编写前端时，通常会把图片、css、js等文件放在static文件夹下。但这同时也导致了一个问题：在浏览器加载网页时，会留有一份缓存。当重新运行项目，浏览器并没有向后台请求新的样式文件，而是直接加载的缓存。 正常人最初的想法肯定都是把浏览器缓存关掉。但不知为何，我的"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://shixuan.me/img/og_image.png"><meta property="article:published_time" content="2019-12-11T13:44:06.000Z"><meta property="article:modified_time" content="2020-08-14T08:58:48.255Z"><meta property="article:author" content="S.X."><meta property="article:tag" content="Flask"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shixuan.me/2019/12/11/cache-in-flask/"},"headline":"Core Dump","image":["http://shixuan.me/img/og_image.png"],"datePublished":"2019-12-11T13:44:06.000Z","dateModified":"2020-08-14T08:58:48.255Z","author":{"@type":"Person","name":"S.X."},"description":"最近写大作业需要用到Flask框架，但使用时发现一个致命问题。 起因是我在修改css文件后，重新运行项目，发现前端并没有更改。 原因是在编写前端时，通常会把图片、css、js等文件放在static文件夹下。但这同时也导致了一个问题：在浏览器加载网页时，会留有一份缓存。当重新运行项目，浏览器并没有向后台请求新的样式文件，而是直接加载的缓存。 正常人最初的想法肯定都是把浏览器缓存关掉。但不知为何，我的"}</script><link rel="canonical" href="http://shixuan.me/2019/12/11/cache-in-flask/"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-175447554-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-175447554-1');</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="Core Dump" type="application/atom+xml">
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.jpg" alt="Core Dump" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/SowiloX/SowiloX.github.io"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2019-12-11T13:44:06.000Z" title="2019-12-11T13:44:06.000Z">2019-12-11</time></span><span class="level-item">Updated&nbsp;<time dateTime="2020-08-14T08:58:48.255Z" title="2020-08-14T08:58:48.255Z">2020-08-14</time></span><span class="level-item"><a class="link-muted" href="/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/">前后端</a></span><span class="level-item">4 minutes read (About 576 words)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>&nbsp;visits</span></div></div><h1 class="title is-3 is-size-4-mobile">关于Flask浏览器缓存问题</h1><div class="content"><p>最近写大作业需要用到Flask框架，但使用时发现一个致命问题。</p>
+<p>起因是我在修改css文件后，重新运行项目，发现前端并没有更改。</p>
+<p>原因是在编写前端时，通常会把图片、css、js等文件放在static文件夹下。但这同时也导致了一个问题：在浏览器加载网页时，会留有一份缓存。当重新运行项目，浏览器并没有向后台请求新的样式文件，而是直接加载的缓存。</p>
+<p>正常人最初的想法肯定都是把浏览器缓存关掉。但不知为何，我的小chrome不吃这套（摊手。而且把浏览器缓存关掉也不是一个明智的选择。</p>
+<p>之后浏览了不少的博客，大多数给出的方法是更改flask的缓存机制，flask配置文件中默认的缓存有效时间是12h。然而直接更改flask设置并不是一个合适的方法。有的博客给出了在项目中的python中的文件中进行此项设置的更改。然而我的小项目也不吃这套（再次摊手。</p>
+<p>无奈之下，只能改用最笨的方法：既然浏览器不对后台进行请求，那就让他强行请求就好了。</p>
+<p><strong>核心想法是动态更改html中的url，每次请求的url不一样，浏览器便不会加载缓存</strong></p>
+<p>于是，在html文件中引入css时，可以采用这种方式：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel="stylesheet" href="&#123;&#123; url_for('static', filename='assets/css/main.css', v=0.0129)&#125;&#125;" &gt;;</span><br></pre></td></tr></table></figure>
+<p>每次更改样式文件后，手动更改一下或动态生成版本号，这样浏览器发现版本号对不上后就会重新请求一份。</p>
+<p>也可采用时间戳的方式。时间戳的好处在于能够避免重复。</p>
+<p>例如我加载本地的图片时，可采用以下方式引入时间戳：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path = <span class="string">"static/wordcloud.png?timestamp="</span>+<span class="keyword">new</span> <span class="built_in">Date</span>().getTime(); <span class="comment">//在图片路径后加入时间戳</span></span><br><span class="line">html = <span class="string">'&lt;img src="'</span>+path+<span class="string">'" alt="wordcloud"&gt;'</span>;</span><br></pre></td></tr></table></figure>
+
+<p><del>我承认这个方法很笨，但真的立竿见影</del></p>
+<p><strong>果然，笨方法永远是最好用的。</strong></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>关于Flask浏览器缓存问题</p><p><a href="http://shixuan.me/2019/12/11/cache-in-flask/">http://shixuan.me/2019/12/11/cache-in-flask/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>S.X.</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2019-12-11</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2020-08-14</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags size-small mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Flask/">Flask</a></div><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f36627a4fb687b2" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="https://www.buymeacoffee.com/sowilo" style="background-color:rgba(255,128,62,.87);border-color:transparent;color:white;" target="_blank" rel="noopener"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2019/12/12/add-valine-comments/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">添加Valine评论功能</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2019/10/10/to-hexo/"><span class="level-item">迁移至Hexo</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="lv-container" data-id="city" data-uid="MTAyMC81MTQzMi8yNzkxMw=="><script>(function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
+
+            if (typeof LivereTower === 'function') { return; }
+
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
+
+            e.parentNode.insertBefore(j, e);
+        })(document, 'script');</script><noscript>Please activate JavaScript for write a comment in LiveRe</noscript></div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.jpg" alt="Core Dump" height="28"></a><p class="size-small"><span>&copy; 2021 S.X.</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/sowilox"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'http://shixuan.me',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
