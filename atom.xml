@@ -6,7 +6,7 @@
   <link href="http://shixuan.me/atom.xml" rel="self"/>
   
   <link href="http://shixuan.me/"/>
-  <updated>2021-01-01T05:33:22.189Z</updated>
+  <updated>2021-05-01T06:18:21.407Z</updated>
   <id>http://shixuan.me/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Maximum Mean Discrepancy 最大化均值差异</title>
+    <link href="http://shixuan.me/2021/05/01/mmd/"/>
+    <id>http://shixuan.me/2021/05/01/mmd/</id>
+    <published>2021-04-30T17:00:20.000Z</published>
+    <updated>2021-05-01T06:18:21.407Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;天杀的mmd记录。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="machine learning" scheme="http://shixuan.me/categories/machine-learning/"/>
+    
+    
+    <category term="transfer learning" scheme="http://shixuan.me/tags/transfer-learning/"/>
+    
+    <category term="machine learning" scheme="http://shixuan.me/tags/machine-learning/"/>
+    
+  </entry>
   
   <entry>
     <title>2021 新年快乐</title>
@@ -38,19 +59,21 @@
     <link href="http://shixuan.me/2020/11/19/scipy-minimize-with-vectors/"/>
     <id>http://shixuan.me/2020/11/19/scipy-minimize-with-vectors/</id>
     <published>2020-11-19T10:32:25.000Z</published>
-    <updated>2021-01-02T14:56:08.472Z</updated>
+    <updated>2021-05-01T05:01:16.899Z</updated>
     
     
     <summary type="html">&lt;p&gt;记一次困扰了一周的问题&lt;/p&gt;</summary>
     
     
     
-    <category term="optimization" scheme="http://shixuan.me/categories/optimization/"/>
+    <category term="machine learning" scheme="http://shixuan.me/categories/machine-learning/"/>
     
     
     <category term="scipy" scheme="http://shixuan.me/tags/scipy/"/>
     
     <category term="optimization" scheme="http://shixuan.me/tags/optimization/"/>
+    
+    <category term="machine learning" scheme="http://shixuan.me/tags/machine-learning/"/>
     
   </entry>
   
@@ -59,19 +82,19 @@
     <link href="http://shixuan.me/2020/09/12/index-and-b+tree/"/>
     <id>http://shixuan.me/2020/09/12/index-and-b+tree/</id>
     <published>2020-09-12T12:38:59.000Z</published>
-    <updated>2020-09-19T12:49:17.485Z</updated>
+    <updated>2021-05-01T05:01:37.426Z</updated>
     
     
     <summary type="html">&lt;p&gt;为什么InnoDB使用B+树作为索引的数据结构？&lt;/p&gt;</summary>
     
     
     
-    <category term="数据结构" scheme="http://shixuan.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <category term="algorithms" scheme="http://shixuan.me/categories/algorithms/"/>
     
-    
-    <category term="数据结构" scheme="http://shixuan.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     <category term="MySQL" scheme="http://shixuan.me/tags/MySQL/"/>
+    
+    <category term="data structure" scheme="http://shixuan.me/tags/data-structure/"/>
     
   </entry>
   
@@ -186,19 +209,19 @@
     <link href="http://shixuan.me/2020/02/29/disjoint-sets/"/>
     <id>http://shixuan.me/2020/02/29/disjoint-sets/</id>
     <published>2020-02-29T12:46:23.000Z</published>
-    <updated>2021-01-19T05:38:17.693Z</updated>
+    <updated>2021-05-01T05:01:00.146Z</updated>
     
     
     <summary type="html">&lt;p&gt;今天给朋友找资料时，无意中翻出了当年写的Kruskal算法的实现代码。&lt;del&gt;说实话现在再看当年自己写的代码，已经看不懂了。&lt;/del&gt;其中在判断选边之后会不会形成闭环回路时，用到了并查集，因为当时是现用现学的，所以还是有些生疏，今天又拿出来翻了翻。说真的，这个结构以及算法是真的简洁实用。&lt;/p&gt;</summary>
     
     
     
-    <category term="数据结构" scheme="http://shixuan.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <category term="algorithms" scheme="http://shixuan.me/categories/algorithms/"/>
     
-    
-    <category term="数据结构" scheme="http://shixuan.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     <category term="C" scheme="http://shixuan.me/tags/C/"/>
+    
+    <category term="data structure" scheme="http://shixuan.me/tags/data-structure/"/>
     
   </entry>
   

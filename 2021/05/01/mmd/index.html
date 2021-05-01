@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Maximum Mean Discrepancy 最大化均值差异 - Core Dump</title><meta description="天杀的mmd记录。"><meta property="og:type" content="blog"><meta property="og:title" content="Maximum Mean Discrepancy 最大化均值差异"><meta property="og:url" content="http://shixuan.me/2021/05/01/mmd/"><meta property="og:site_name" content="Core Dump"><meta property="og:description" content="天杀的mmd记录。"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://shixuan.me/img/og_image.png"><meta property="article:published_time" content="2021-04-30T17:00:20.000Z"><meta property="article:modified_time" content="2021-05-01T06:18:21.407Z"><meta property="article:author" content="S.X."><meta property="article:tag" content="transfer learning"><meta property="article:tag" content="machine learning"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shixuan.me/2021/05/01/mmd/"},"headline":"Core Dump","image":["http://shixuan.me/img/og_image.png"],"datePublished":"2021-04-30T17:00:20.000Z","dateModified":"2021-05-01T06:18:21.407Z","author":{"@type":"Person","name":"S.X."},"description":"天杀的mmd记录。"}</script><link rel="canonical" href="http://shixuan.me/2021/05/01/mmd/"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-175447554-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-175447554-1');</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="Core Dump" type="application/atom+xml">
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.jpg" alt="Core Dump" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/SowiloX/SowiloX.github.io"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-04-30T17:00:20.000Z" title="2021-04-30T17:00:20.000Z">2021-05-01</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-05-01T06:18:21.407Z" title="2021-05-01T06:18:21.407Z">2021-05-01</time></span><span class="level-item"><a class="link-muted" href="/categories/machine-learning/">machine learning</a></span><span class="level-item">7 minutes read (About 1017 words)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>&nbsp;visits</span></div></div><h1 class="title is-3 is-size-4-mobile">Maximum Mean Discrepancy 最大化均值差异</h1><div class="content"><p>天杀的mmd记录。<a id="more"></a></p>
+<h1 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h1><p>mmd最早的提出便是为了衡量任意两个随机变量分布之间的差异，它是一种度量标准，可视作一种距离。</p>
+<p>矩，moment，通常用来描述一个随机变量的分布。简单的例如一阶中心矩，期望；二阶中心矩，方差。但单单的期望和方差不足以描述一个高维的随机变量，这时便需要一个高维的矩来描述一个高维分布。</p>
+<p>若两个分布任意阶的矩都一样的话，那么这两个分布便是一致的；若两个分布不一样，那么便用差值最大的矩来衡量这两个分布的差异。这便是mmd的核心思想。</p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>在 [1] 中，一个普适的mmd定义为<br>$$<br>MMD[\mathcal{F},p,q]:=\mathop{sup}\limits_{f\in\mathcal{F}}(E_p{[f(x)]}-(E_q{[f(y)]})<br>$$<br>此式的含义是寻找一个映射函数$f$，这个映射函数能够将变量映射到高维空间，之后求两个分布的随机变量在映射后的期望的差，这个差值便是mean discrepancy，然后寻找这个mean discrepancy的上确界。这个最大值便是mmd。</p>
+<p>现在有两个样本$X$和$Y$，其中$X\sim p,Y\sim q$，那么有<br>$$<br>MMD[\mathcal{F},p,q]:=\mathop{sup}\limits_{f\in\mathcal{F}}\left(\frac{1}{m}\sum_{i=1}^m{f(x_i)}-\frac{1}{n}\sum_{j=1}^n{f(y_j)}\right)<br>$$</p>
+<h1 id="RKHS下的定义"><a href="#RKHS下的定义" class="headerlink" title="RKHS下的定义"></a>RKHS下的定义</h1><p>再生希尔伯特空间，reproducing kernel Hilbert space (RKHS)，是一种有再生性质的希尔伯特空间。希尔伯特空间是一种内积空间，而再生希尔伯特空间拥有${\langle k(x,\cdot),k(y,\cdot)\rangle}_\mathcal{H}=k(x,y)$的性质。在迁移学习里的mmd一般用RKHS下定义的mmd，主要目的是为了后续计算中将内积计算转变为核函数。</p>
+<p>在RKHS中$E_p{[f(x)]}$的计算可以转化为<br>$$<br>E_p{[f(x)]}=\int_\mathcal{X}p(dx)f(x)=\int_\mathcal{X}p(dx)\langle k(x,\cdot),f\rangle_\mathcal{H}=\langle \int_\mathcal{X}p(dx)k(x,\cdot),f\rangle_\mathcal{H}=\langle \mu_p,f\rangle_\mathcal{H}<br>$$</p>
+<p>上述公式第一个等号就是普通的期望展开计算；第二个等号用了所谓的再生性，将映射函数变为了一个核函数和基底向量的内积；第三个等号是内积的性质；最后一个等号将内积括号中左侧部分定义成了$\mu_p$，这个东西叫 kernel meaning embeddings，具体的定义为<br>$$<br>\mu_p=\int_\mathcal{X}p(dx)k(x,\cdot)\mu_p=\int_\mathcal{X}p(dx)k(x,\cdot)<br>$$</p>
+<p>[1]中给出了RKHS下的mmd计算方法：<br>$$<br>MMD^2[\mathcal{F},p,q]=\left|\mu_p-\mu_q\right|_\mathcal{H}^2<br>$$</p>
+<p>并给出了简短的证明：</p>
+
+$$
+\begin{align}
+MMD^2[\mathcal{F},p,q] &= \left[\mathop{sup}\limits_{\left\|f\right\|_\mathcal{H}\leq1}(E_p{[f(x)]}-(E_q{[f(y)]})\right]^2 \\
+& =\left[\mathop{sup}\limits_{\left\|f\right\|_\mathcal{H}\leq1}\langle \mu_p-\mu_q,f\rangle_\mathcal{H}\right]^2 \\
+& =\left\|\mu_p-\mu_q\right\|_\mathcal{H}^2
+\end{align}
+$$
+
+
+
+<p>其中第二个等号到最后一个等号利用的性质为$\langle a,b\rangle \leq \left|a\right| \left|b\right|$。</p>
+<p>所以，RKHS下的mmd可以写为<br>$$<br>MMD^2[\mathcal{F},p,q]=\left| \frac{1}{m}\sum_{i=1}^m{f(x_i)}-\frac{1}{n}\sum_{j=1}^n{f(y_j)} \right|_\mathcal{H}^2<br>$$</p>
+<p>经过展开，可得<br>$$<br>MMD^2[\mathcal{F},p,q]=\left| \frac{1}{m^2}\sum_{i=1,j=1}^m{k(x_i,x_j)}-\frac{2}{mn}\sum_{i=1,j=1}^{m,n}{k(x_i,y_j)}+\frac{1}{n^2}\sum_{i=1,j=1}^n{k(y_i,y_j)} \right|_\mathcal{H}^2<br>$$</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jmlr.org/papers/volume13/gretton12a/gretton12a.pdf">A Kernel Two-Sample Test</a></p>
+<p><a target="_blank" rel="noopener" href="http://scholar.google.com.hk/scholar_url?url=ftp://nozdr.ru/biblio/kolxoz/Cs/CsLn/Algorithmic%2520Learning%2520Theory,%252018%2520conf.,%2520ALT%25202007(LNCS4754,%2520Springer,%25202007)(ISBN%25209783540752240)(414s)_CsLn_.pdf%23page=24&hl=zh-CN&sa=X&ei=CeSMYOjLHYvuygSir5CwBA&scisig=AAGBfm3Pd8679gd23UKbtaRhlAcms8NI9Q&nossl=1&oi=scholarr">A Hilbert Space Embedding for Distributions</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/163839117">统计知识（一）MMD Maximum Mean Discrepancy 最大均值差异</a></p>
+<p><a target="_blank" rel="noopener" href="http://jd92.wang/assets/files/transfer_learning_tutorial_wjd.pdf">迁移学习简明手册</a></p>
+</blockquote>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Maximum Mean Discrepancy 最大化均值差异</p><p><a href="http://shixuan.me/2021/05/01/mmd/">http://shixuan.me/2021/05/01/mmd/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>S.X.</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-05-01</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-05-01</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags size-small mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/transfer-learning/">transfer learning</a><a class="link-muted mr-2" rel="tag" href="/tags/machine-learning/">machine learning</a></div><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f36627a4fb687b2" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="https://www.buymeacoffee.com/sowilo" style="background-color:rgba(255,128,62,.87);border-color:transparent;color:white;" target="_blank" rel="noopener"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/01/01/happy-new-year-2021/"><span class="level-item">2021 新年快乐</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="lv-container" data-id="city" data-uid="MTAyMC81MTQzMi8yNzkxMw=="><script>(function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
+
+            if (typeof LivereTower === 'function') { return; }
+
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
+
+            e.parentNode.insertBefore(j, e);
+        })(document, 'script');</script><noscript>Please activate JavaScript for write a comment in LiveRe</noscript></div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="is-flex" href="#核心思想"><span class="mr-2">1</span><span>核心思想</span></a></li><li><a class="is-flex" href="#定义"><span class="mr-2">2</span><span>定义</span></a></li><li><a class="is-flex" href="#RKHS下的定义"><span class="mr-2">3</span><span>RKHS下的定义</span></a></li><li><a class="is-flex" href="#Reference"><span class="mr-2">4</span><span>Reference</span></a></li></ul></div></div><style>.menu-list > li > a.is-active + .menu-list { display: block; }.menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.jpg" alt="Core Dump" height="28"></a><p class="size-small"><span>&copy; 2021 S.X.</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/sowilox"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'http://shixuan.me',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://shixuan.me/2020/02/29/disjoint-sets/</loc>
-    <lastmod>2021-01-19</lastmod>
+    <loc>http://shixuan.me/2021/05/01/mmd/</loc>
+    <lastmod>2021-05-01</lastmod>
+  </url>
+  <url>
+    <loc>http://shixuan.me/2020/09/12/index-and-b+tree/</loc>
+    <lastmod>2021-05-01</lastmod>
   </url>
   <url>
     <loc>http://shixuan.me/2020/11/19/scipy-minimize-with-vectors/</loc>
-    <lastmod>2021-01-02</lastmod>
+    <lastmod>2021-05-01</lastmod>
+  </url>
+  <url>
+    <loc>http://shixuan.me/2020/02/29/disjoint-sets/</loc>
+    <lastmod>2021-05-01</lastmod>
   </url>
   <url>
     <loc>http://shixuan.me/2021/01/01/happy-new-year-2021/</loc>
@@ -15,10 +23,6 @@
   <url>
     <loc>http://shixuan.me/2020/07/10/maven/</loc>
     <lastmod>2020-12-26</lastmod>
-  </url>
-  <url>
-    <loc>http://shixuan.me/2020/09/12/index-and-b+tree/</loc>
-    <lastmod>2020-09-19</lastmod>
   </url>
   <url>
     <loc>http://shixuan.me/2020/04/10/js-prototype-and-inheritance/</loc>
