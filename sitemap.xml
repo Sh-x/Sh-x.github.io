@@ -123,6 +123,13 @@
 
   
   <url>
+    <loc>http://shixuan.me/tags/Java/</loc>
+    <lastmod>2021-05-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://shixuan.me/tags/Flask/</loc>
     <lastmod>2021-05-01</lastmod>
     <changefreq>daily</changefreq>
@@ -144,7 +151,14 @@
   </url>
   
   <url>
-    <loc>http://shixuan.me/tags/Java/</loc>
+    <loc>http://shixuan.me/tags/machine-learning/</loc>
+    <lastmod>2021-05-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://shixuan.me/tags/transfer-learning/</loc>
     <lastmod>2021-05-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -152,34 +166,6 @@
   
   <url>
     <loc>http://shixuan.me/tags/Javascript/</loc>
-    <lastmod>2021-05-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://shixuan.me/tags/Maven/</loc>
-    <lastmod>2021-05-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://shixuan.me/tags/Spring/</loc>
-    <lastmod>2021-05-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://shixuan.me/tags/C/</loc>
-    <lastmod>2021-05-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://shixuan.me/tags/MySQL/</loc>
     <lastmod>2021-05-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -200,7 +186,7 @@
   </url>
   
   <url>
-    <loc>http://shixuan.me/tags/transfer-learning/</loc>
+    <loc>http://shixuan.me/tags/Maven/</loc>
     <lastmod>2021-05-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -214,7 +200,21 @@
   </url>
   
   <url>
-    <loc>http://shixuan.me/tags/machine-learning/</loc>
+    <loc>http://shixuan.me/tags/C/</loc>
+    <lastmod>2021-05-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://shixuan.me/tags/MySQL/</loc>
+    <lastmod>2021-05-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://shixuan.me/tags/Spring/</loc>
     <lastmod>2021-05-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -237,14 +237,14 @@
   </url>
   
   <url>
-    <loc>http://shixuan.me/categories/algorithms/</loc>
+    <loc>http://shixuan.me/categories/machine-learning/</loc>
     <lastmod>2021-05-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://shixuan.me/categories/machine-learning/</loc>
+    <loc>http://shixuan.me/categories/algorithms/</loc>
     <lastmod>2021-05-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
