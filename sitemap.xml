@@ -65,13 +65,6 @@
   </url>
   
   <url>
-    <loc>http://shixuan.me/2019/10/10/to-hexo/</loc>
-    
-    <lastmod>2020-09-12</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://shixuan.me/2020/07/12/java-reflection/</loc>
     
     <lastmod>2020-09-05</lastmod>
@@ -116,7 +109,7 @@
 
   <url>
     <loc>http://shixuan.me/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -124,98 +117,98 @@
   
   <url>
     <loc>http://shixuan.me/tags/Java/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/tags/Flask/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/tags/Docker/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/tags/Linux/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/tags/machine-learning/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/tags/transfer-learning/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/tags/Javascript/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/tags/scipy/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/tags/optimization/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/tags/Maven/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/tags/data-structure/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/tags/C/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/tags/MySQL/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/tags/Spring/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -224,28 +217,28 @@
   
   <url>
     <loc>http://shixuan.me/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/categories/Nonsense/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/categories/machine-learning/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://shixuan.me/categories/algorithms/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
